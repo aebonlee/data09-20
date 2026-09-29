@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>예약 가능 테니스 코트 조회</title>
+  <meta name="description" content="기준 위치·반경·기간·희망 시간·최소 연속 이용시간으로 연속 예약이 가능한 테니스 코트를 찾아 거리순 목록과 위치 그림으로 보여 주는 브라우저 도구(1단계 시연판)">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="inner header-inner">
+      <a class="brand" href="#/search">
+        <span class="brand-name">예약 가능 테니스 코트 조회</span>
+        <span class="brand-sub">위치·반경 · 기간·희망 시간 · 연속 이용시간 판정</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="주 메뉴">
+        <a href="#/search" data-route="search">코트 검색</a>
+        <a href="#/courts" data-route="courts">코트 목록</a>
+        <a href="#/slots" data-route="slots">예약 슬롯</a>
+        <a href="#/data" data-route="data">백업·복원</a>
+        <a href="#/poc" data-route="poc">네이버 연계 준비</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="sampleBanner" class="sample-banner" hidden>지금 보이는 것은 <strong>예시 데이터</strong>입니다. 코트 이름·위치·예약 슬롯은 모두 가상의 값입니다.</div>
+  <div id="storeBanner" class="store-banner" hidden>이 브라우저에서는 저장소를 쓸 수 없어, 창을 닫으면 데이터가 사라집니다. 작업 후 「백업·복원」에서 백업 파일을 저장해 두세요.</div>
+
+  <main id="main" class="inner main" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="inner">1단계 시연판 · 네이버 예약 슬롯은 자동으로 가져오지 않습니다. 네이버 예약 페이지에서 확인한 값을 입력하면 연속 이용시간을 판정합니다 · 데이터는 이 브라우저에만 저장됩니다</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="dialog" class="dialog">
+    <form method="dialog" class="dialog-body" id="dialogForm">
+      <h2 id="dialogTitle"></h2>
+      <div id="dialogContent"></div>
+      <div class="dialog-actions" id="dialogActions"></div>
+    </form>
+  </dialog>
+
+  <!-- 로컬 파일(file://)로 열어도 돌도록 module 이 아닌 일반 스크립트로 불러옵니다 -->
+  <script src="js/logic.js"></script>
+  <script src="js/sample-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
